@@ -37,7 +37,7 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templateWithJQuery = () => {
-  let template = $('template').html();
+  let template = $('#template').html();
   starWarsPeople.forEach(value => {
     let $newSection = $(`<section>${template}</section>`)
     $newSection.find('h2').text(value.name);
