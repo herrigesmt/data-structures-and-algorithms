@@ -36,7 +36,7 @@ The final structure should resemble this:
 
 ```bash
   data-structures-and-algorithms
-  |
+  |──
   ├── code-challenges
   │  └── challenge-01.test.js
   │  └── challenge-02.test.js

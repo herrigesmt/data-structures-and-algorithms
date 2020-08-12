@@ -16,6 +16,10 @@ I created an empty array then iterated through the input array with a for loop a
 
 ![Whiteboard](../assets/array-reverse.png)
 
+[code](arrayReverse/array-reverse.js)
+
+
+
 ### Shift Array
 
 #### Challenges
@@ -29,3 +33,5 @@ I used the Array.slice() method to create a copy of the original array, then fou
 ### Solution
 
 ![Whiteboard](../assets/array-shift.png)
+
+[code](arrayShift/array-shift.js)
