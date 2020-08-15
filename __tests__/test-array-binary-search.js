@@ -1,6 +1,6 @@
 'use strict';
 
-const binSearch = require('../javascript/arrayBinarySearch/array-binary-search.js');
+const binSearch = require('../javascript/challenges/arrayBinarySearch/array-binary-search.js');
 
 describe('array-binary-search test', () => {
     it('should return number of index in sorted array if in first half of array', () => {
