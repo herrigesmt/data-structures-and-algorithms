@@ -29,6 +29,9 @@ class LinkedList {
             }
             currentNode = currentNode.next;
         }
+        if(currentNode.value === value) { // account for while loop ending before checking the last value since the last node will have a next property of null
+            return true;
+        }
         return false;
     }
 
