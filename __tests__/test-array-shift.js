@@ -1,6 +1,6 @@
 'use strict';
 
-const insertShiftArray = require('../javascript/arrayShift/array-shift.js');
+const insertShiftArray = require('../javascript/challenges/arrayShift/array-shift.js');
 
 describe('array-shift test', () => {
     it('should return an increase in array length', () => {

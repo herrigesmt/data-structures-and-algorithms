@@ -16,7 +16,7 @@ I created an empty array then iterated through the input array with a for loop a
 
 ![Whiteboard](../assets/array-reverse.png)
 
-[code](./arrayReverse/array-reverse.js)
+[code](./challenges/arrayReverse/array-reverse.js)
 
 
 
@@ -34,7 +34,7 @@ I used the Array.slice() method to create a copy of the original array, then fou
 
 ![Whiteboard](../assets/array-shift.png)
 
-[code](./arrayShift/array-shift.js)
+[code](./challenges/arrayShift/array-shift.js)
 
 ### Binary Search Array
 
@@ -51,4 +51,4 @@ The first idea was to use recursion which although I did get it working in the e
 ![Whiteboard](../assets/array-binary-search.png)
 The end result looks much different than what you see in the whiteboard because I had to change how the recursion worked.
 
-[code](./arrayBinarySearch/array-binary-search.js)
+[code](./challenges/arrayBinarySearch/array-binary-search.js)
