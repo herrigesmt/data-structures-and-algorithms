@@ -30,3 +30,16 @@ With `.insertAfter(value, newVal)`, we do something very similar to `.insertBefo
 
 [code](./linked-list.js)
 ![Whiteboard](../../assets/linked-list-insert.jpeg)
+
+## Challenge
+
+Extend your LinkedList class with methods `.kthFromEnd(k)` which takes in an argument `k` and finds the value of the node that is kth from the end of the node. If `k` is greater than the length of the list or a negative integer, return `Exception`.
+
+## Approach & efficiency
+
+First we check to see if `k` is negative by seeing if it's less than 0. If it is we return `Exception`. Then we need to use a while loop to traverse through the list and find the end node and as we iterate through the loop we increment a counter to track the length of the list. After we finish the while loop to find the length, we check to see if the length is less than `k`, we return `Exception`. If it isn't, we use a for loop that runs for the amount of time as the length of the list and traverses through the list again to find the kth from the end node and returns that value.
+
+I believe the big O O(2n)?
+
+[code](./linked-list.js)
+[Whiteboard](https://docs.google.com/document/d/1jgFYPFDGBIJN4E_ok1i3xYsWhpSXwfrM38Y6RxPzn0M/edit?usp=sharing)
