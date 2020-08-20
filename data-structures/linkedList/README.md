@@ -43,3 +43,19 @@ I believe the big O O(2n)?
 
 [code](./linked-list.js)
 [Whiteboard](https://docs.google.com/document/d/1jgFYPFDGBIJN4E_ok1i3xYsWhpSXwfrM38Y6RxPzn0M/edit?usp=sharing)
+
+## Challenge
+
+Create a new function separate from the LinkedList class called `zipLists(list1, list2)` which takes in 2 linked lists and combines them into a single linked list.
+
+## Approach & effieciency
+
+We create a new linked list with our LinkedList class/consctructor. Then we create variables where we save the heads of the 2 lists of each of the lists we take in. We iterate through a while loop for as long as either of those variables are truthy and we use the `append` method we have access to from the linkedList class to attach to the end the value of the current node we are at for each of the linked list we are taking in. Then, we traverse each of the lists to the next and repeat the while loops. We have 2 if code blocks inside the while loop to check whether either variable are truthy to deal with whether one list is longer than the other.
+
+Big O:
+
+Time: O(n)
+Space: O(n)
+
+[code](./linked-list.js)
+![Whiteboard](../../assets/linked-list-ziplists.jpeg)
