@@ -1,20 +1,20 @@
 'use strict';
 
-const LinkedList = require('../data-structures/linkedList/linked-list.js');
+const listModule = require('../data-structures/linkedList/linked-list.js');
 
 it('should instantiate', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     expect(ll).toBeDefined();
 });
 
 it('should insert into empty linked list', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     expect(ll.head.value).toBe('dog');
 });
 
 it('should insert new node as "head"', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('cat');
     expect(ll.head.value).toBe('cat');
@@ -22,7 +22,7 @@ it('should insert new node as "head"', () => {
 });
 
 it('should return true when calling includes() with a value that exists in the list', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('cat');
     ll.insert('dragon');
@@ -32,7 +32,7 @@ it('should return true when calling includes() with a value that exists in the l
 });
 
 it('should return false when calling includes() with a value that does not exist in the list', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('cat');
     ll.insert('dragon');
@@ -42,7 +42,7 @@ it('should return false when calling includes() with a value that does not exist
 });
 
 it('should return a collection of all values that exist in the linked list when callint toString()', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('cat');
     ll.insert('dragon');
@@ -51,7 +51,7 @@ it('should return a collection of all values that exist in the linked list when 
 });
 
 it('should append a new node to the end of a linked list when you call appand()', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('dragon');
     ll.append('alligator');
@@ -62,7 +62,7 @@ it('should append a new node to the end of a linked list when you call appand()'
 });
 
 it('should insert a node before a node with a value taken in as an argument with insertbefore()', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('dragon');
     ll.append('alligator');
@@ -71,7 +71,7 @@ it('should insert a node before a node with a value taken in as an argument with
 });
 
 it('should insert a node before the first node of a linked list with insertbefore()', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('dragon');
     ll.insert('alligator');
@@ -80,7 +80,7 @@ it('should insert a node before the first node of a linked list with insertbefor
 });
 
 it('should insert a node after a node with a value taken in as an argument with insertafter()', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('dragon');
     ll.insert('alligator');
@@ -90,7 +90,7 @@ it('should insert a node after a node with a value taken in as an argument with 
 });
 
 it('should insert stuff', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('dragon');
     ll.insert('alligator');
@@ -101,7 +101,7 @@ it('should insert stuff', () => {
 });
 
 it('should insert a node after the last node of the linked list if necessary with insertAfter()', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('dog');
     ll.insert('dragon');
     ll.insert('alligator');
@@ -112,7 +112,7 @@ it('should insert a node after the last node of the linked list if necessary wit
 });
 
 it('should return the string \'Exception\' when you put in an argument greater than the length of the list', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('1');
     ll.append('2');
     ll.append('3');
@@ -122,7 +122,7 @@ it('should return the string \'Exception\' when you put in an argument greater t
 });
 
 it('should work properly when k and the length of the list are the same', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('1');
     ll.append('2');
     ll.append('3');
@@ -132,7 +132,7 @@ it('should work properly when k and the length of the list are the same', () => 
 });
 
 it('should return the string \'Exception\' when you put in a negative integer as the argument', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('1');
     ll.append('2');
     ll.append('3');
@@ -142,13 +142,13 @@ it('should return the string \'Exception\' when you put in a negative integer as
 });
 
 it('should work properly when the linked list is of a size 1', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('(╯°□°）╯︵ ┻━┻)');
     expect(ll.kthFromTheEnd(0)).toBe('(╯°□°）╯︵ ┻━┻)');
 });
 
 it('should work when k is not at the end, but somewhere in the middle of the linked list', () => {
-    const ll = new LinkedList();
+    const ll = new listModule.LinkedList();
     ll.insert('1');
     ll.append('2');
     ll.append('3');
@@ -175,4 +175,56 @@ it('should work when k is not at the end, but somewhere in the middle of the lin
     ll.append('24');
     ll.append('25');
     expect(ll.kthFromTheEnd(9)).toBe('16');
+});
+
+it('should correctly merge 2 linked lists of the same length with zipLists() ', () => {
+    const ll1 = new listModule.LinkedList;
+    ll1.insert('1');
+    ll1.append('3');
+    ll1.append('5');
+    ll1.append('7');
+    ll1.append('9');
+    const ll2 = new listModule.LinkedList;
+    ll2.insert('2');
+    ll2.append('4');
+    ll2.append('6');
+    ll2.append('8');
+    ll2.append('10');
+    expect(listModule.zipLists(ll1, ll2).toString()).toBe('{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> { 7 } -> { 8 } -> { 9 } -> { 10 } -> NULL');
+});
+
+it('should correctly merge 2 linked lists of different lengths with zipLists(), first list longer', () => {
+    const ll1 = new listModule.LinkedList;
+    ll1.insert('1');
+    ll1.append('3');
+    ll1.append('5');
+    ll1.append('7');
+    ll1.append('9');
+    ll1.append('11');
+    ll1.append('12');
+    const ll2 = new listModule.LinkedList;
+    ll2.insert('2');
+    ll2.append('4');
+    ll2.append('6');
+    ll2.append('8');
+    ll2.append('10');
+    expect(listModule.zipLists(ll1, ll2).toString()).toBe('{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> { 7 } -> { 8 } -> { 9 } -> { 10 } -> { 11 } -> { 12 } -> NULL');
+});
+
+it('should correctly merge 2 linked lists of different lengths with zipLists(), second list longer', () => {
+    const ll1 = new listModule.LinkedList;
+    ll1.insert('1');
+    ll1.append('3');
+    ll1.append('5');
+    ll1.append('7');
+    ll1.append('9');
+    const ll2 = new listModule.LinkedList;
+    ll2.insert('2');
+    ll2.append('4');
+    ll2.append('6');
+    ll2.append('8');
+    ll2.append('10');
+    ll1.append('11');
+    ll1.append('12');
+    expect(listModule.zipLists(ll1, ll2).toString()).toBe('{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> { 7 } -> { 8 } -> { 9 } -> { 10 } -> { 11 } -> { 12 } -> NULL');
 });

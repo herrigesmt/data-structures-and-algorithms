@@ -100,8 +100,6 @@ class LinkedList {
             currentNode = currentNode.next;
             counter++;
         }
-        console.log(counter);
-        console.log(counter - k - 1);
         if(k > counter) {
             return 'Exception';
         }
@@ -114,5 +112,29 @@ class LinkedList {
         }
         return currentNode.value;
     }
+
+
 }
-module.exports = LinkedList;
+
+function zipLists(list1, list2){
+    let combinedList = new LinkedList;
+    let ll1Current = list1.head;
+    let ll2Current = list2.head;
+    while(ll1Current || ll2Current){
+        if(ll1Current){
+            combinedList.append(ll1Current.value);
+            ll1Current = ll1Current.next;
+        }
+        if(ll2Current){
+            combinedList.append(ll2Current.value);
+            ll2Current = ll2Current.next;
+        }
+    }
+
+    return combinedList;
+}
+
+module.exports = {
+    LinkedList,
+    zipLists,
+};
