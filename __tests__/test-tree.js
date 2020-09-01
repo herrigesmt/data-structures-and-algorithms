@@ -19,7 +19,6 @@ describe('binary tree', () => {
         expect(tree.root.value).toBe('7');
         expect(tree.root.left.value).toBe('1');
         expect(tree.root.right.value).toBe('8');
-        
     });
     it('should successfully return a collection from a preorder traversal', () => {
         let tree = new BinaryTree(new Node('7'));
@@ -48,6 +47,21 @@ describe('binary tree', () => {
         expect(postOrder[0]).toBe('1');
         expect(postOrder[1]).toBe('8');
         expect(postOrder[2]).toBe('7');
+    });
+    it('should successfully find the max value of a binary tree', () => {
+        let tree = new BinaryTree(new Node(7));
+        tree.root.left = new Node(1, new Node(4), new Node(12));
+        tree.root.right = new Node(2, new Node(9), new Node(13));
+        //        7
+        //    1       2
+        //  4   12  6   13
+        console.log(tree.preOrder());
+        expect(tree.findMaximumValue()).toBe(13);
+    });
+    it('should throw error when running findMaxiumumValue on an empty tree', () => {
+        let tree = new BinaryTree();
+        expect(() => tree.findMaximumValue()).toThrow(Error);
+        expect(() => tree.findMaximumValue()).toThrow('tree is empty');
     });
 });
 

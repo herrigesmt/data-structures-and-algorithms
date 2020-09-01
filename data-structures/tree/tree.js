@@ -65,6 +65,24 @@ class BinaryTree {
         return arr;
     }
 
+    findMaximumValue(){
+        if(this.root === null){
+            throw new Error('tree is empty');
+        }
+        let max = Number.NEGATIVE_INFINITY;
+        function _findmax(root){
+            if(root === null){
+                return;
+            }
+            if(root.value > max){
+                max = root.value;
+            }
+            _findmax(root.left);
+            _findmax(root.right);
+        }
+        _findmax(this.root);
+        return max;
+    }
 }
 
 class BinarySearchTree extends BinaryTree {
