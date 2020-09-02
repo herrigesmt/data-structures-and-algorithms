@@ -55,7 +55,6 @@ describe('binary tree', () => {
         //        7
         //    1       2
         //  4   12  6   13
-        console.log(tree.preOrder());
         expect(tree.findMaximumValue()).toBe(13);
     });
     it('should throw error when running findMaxiumumValue on an empty tree', () => {
@@ -63,5 +62,28 @@ describe('binary tree', () => {
         expect(() => tree.findMaximumValue()).toThrow(Error);
         expect(() => tree.findMaximumValue()).toThrow('tree is empty');
     });
+    it('should properly fizzbuzztree when runnign fizzbuzztree on a tree', () => {
+        let tree = new BinaryTree(new Node(3));
+        tree.root.left = new Node(4, new Node(2), new Node(6));
+        tree.root.right = new Node(8, new Node(10), new Node(15));
+        //        3
+        //    4       8
+        //  2   6   10    15
+        tree.fizzBuzzTree();
+        let treePreOrder = tree.preOrder();
+        expect(treePreOrder[0]).toEqual('Fizz');
+        expect(treePreOrder[1]).toEqual('4');
+        expect(treePreOrder[2]).toEqual('2');
+        expect(treePreOrder[3]).toEqual('Fizz');
+        expect(treePreOrder[4]).toEqual('8');
+        expect(treePreOrder[5]).toEqual('Buzz');
+        expect(treePreOrder[6]).toEqual('FizzBuzz');
+    });
+    it('should return an error when running fizzbuzztree on empty tree', () => {
+        let tree = new BinaryTree();
+        expect(() => tree.fizzBuzzTree()).toThrow(Error);
+        expect(() => tree.fizzBuzzTree()).toThrow('cannot fizzBuzzTree on empty tree');
+    });
+    
 });
 

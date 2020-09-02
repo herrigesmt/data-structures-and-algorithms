@@ -29,6 +29,7 @@ class BinaryTree {
         _preOrder(this.root);
         return arr;
     }
+
     inOrder(){
         const arr = [];
         function _inOrder(root){
@@ -82,6 +83,29 @@ class BinaryTree {
         }
         _findmax(this.root);
         return max;
+    }
+
+    fizzBuzzTree(){
+        if(this.root === null){
+            throw new Error('cannot fizzBuzzTree on empty tree');
+        }
+        function _fizzBuzzTree(root){
+            if(root === null){
+                return;
+            }
+            if(root.value % 15 === 0){
+                root.value = 'FizzBuzz';
+            } else if (root.value % 3 === 0){
+                root.value = 'Fizz';
+            } else if (root.value % 5 === 0){
+                root.value = 'Buzz';
+            } else {
+                root.value = root.value.toString();
+            }
+            _fizzBuzzTree(root.left);
+            _fizzBuzzTree(root.right);
+        }
+        _fizzBuzzTree(this.root);
     }
 }
 
