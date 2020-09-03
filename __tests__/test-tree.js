@@ -84,6 +84,26 @@ describe('binary tree', () => {
         expect(() => tree.fizzBuzzTree()).toThrow(Error);
         expect(() => tree.fizzBuzzTree()).toThrow('cannot fizzBuzzTree on empty tree');
     });
-    
+    it('should properly return an array representing the value of the tree in order when calling breadthFirstTraversal', () => {
+        let tree = new BinaryTree(new Node(3));
+        tree.root.left = new Node(4, new Node(2), new Node(6));
+        tree.root.right = new Node(8, new Node(10), new Node(15));
+        //        3
+        //    4       8
+        //  2   6   10    15
+        let breadthVals = tree.breadthFirstTraversal();
+        expect(breadthVals[0]).toEqual(3);
+        expect(breadthVals[1]).toEqual(4);
+        expect(breadthVals[2]).toEqual(8);
+        expect(breadthVals[3]).toEqual(2);
+        expect(breadthVals[4]).toEqual(6);
+        expect(breadthVals[5]).toEqual(10);
+        expect(breadthVals[6]).toEqual(15);
+    });
+    it('should return an empty array if you call breadthFirstTraversal on an empty tree', () => {
+        let tree = new BinaryTree();
+        let breadthVals = tree.breadthFirstTraversal();
+        expect(breadthVals.length).toEqual(0);
+    });
 });
 
