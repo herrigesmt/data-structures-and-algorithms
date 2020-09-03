@@ -1,3 +1,5 @@
+const {Queue} = require('../stacksAndQueues/stacks-and-queues');
+
 class Node {
     constructor(value, left = null, right = null){
         this.value = value;
@@ -106,6 +108,26 @@ class BinaryTree {
             _fizzBuzzTree(root.right);
         }
         _fizzBuzzTree(this.root);
+    }
+
+    breadthFirstTraversal(){
+        const output = [];
+        if(this.root === null){
+            return output;
+        }
+        let breadth = new Queue();
+        breadth.enqueue(this.root);
+        while(!breadth.isEmpty()){
+            let node = breadth.dequeue();
+            if(node.value.left){
+                breadth.enqueue(node.value.left);
+            }
+            if(node.value.right){
+                breadth.enqueue(node.value.right);
+            }
+            output.push(node.value.value);
+        }
+        return output;
     }
 }
 
