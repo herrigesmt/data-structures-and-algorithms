@@ -62,4 +62,4 @@ For the fifth(and last) pass, we have `i` as 5, `j` as `i-1` [4], and `temp` as 
 
 [JavaScript Code](insertion-sort.js)
 
-[Tests](../../../__tests__/test-insertion-sort.js)
+[Tests](./../../__tests__/test-insertion-sort.js)
