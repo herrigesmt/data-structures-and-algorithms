@@ -12,26 +12,28 @@ const mergeSort = arr => {
 
     merge(left, right, arr);
 
-    function merge(left, right, arr){
-        let index = 0;
-        while(left.length && right.length){
-            if(right[0] < left[0]){
-                arr[index] = right.shift();
-            } else {
-                arr[index] = left.shift();
-            }
+};
+
+function merge(left, right, arr){
+    let index = 0;
+    while(left.length && right.length){
+        if(right[0] < left[0]){
+            arr[index] = right.shift();
             index++;
-        }
-        while (left.length){
+        } else {
             arr[index] = left.shift();
             index++;
         }
-        while (left.length){
-            arr[index] = right.shift();
-            index++;
-        }
     }
-};
+    while (left.length){
+        arr[index] = left.shift();
+        index++;
+    }
+    while (right.length){
+        arr[index] = right.shift();
+        index++;
+    }
+}
 
 module.exports = mergeSort;
 
