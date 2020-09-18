@@ -16,21 +16,27 @@ const mergeSort = arr => {
 
 function merge(left, right, arr){
     let index = 0;
-    while(left.length && right.length){
-        if(right[0] < left[0]){
-            arr[index] = right.shift();
+    let rightIndex = 0;
+    let leftIndex = 0;
+    while(leftIndex < left.length && rightIndex < right.length){
+        if(right[rightIndex] < left[leftIndex]){
+            arr[index] = right[rightIndex];
+            rightIndex++;
             index++;
         } else {
-            arr[index] = left.shift();
+            arr[index] = left[leftIndex];
+            leftIndex++;
             index++;
         }
     }
-    while (left.length){
-        arr[index] = left.shift();
+    while (leftIndex < left.length){
+        arr[index] = left[leftIndex];
+        leftIndex++;
         index++;
     }
-    while (right.length){
-        arr[index] = right.shift();
+    while (rightIndex < right.length){
+        arr[index] = right[rightIndex];
+        rightIndex++;
         index++;
     }
 }
