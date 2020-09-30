@@ -2,7 +2,7 @@ let {Queue} = require('../stacksAndQueues/stacks-and-queues');
 
 const breadthFirst = (node) => {
     let nodes = new Set();
-    let breadth = new Queue;
+    let breadth = new Queue();
     let visited = {};
     breadth.enqueue(node);
     while(!breadth.isEmpty()){
