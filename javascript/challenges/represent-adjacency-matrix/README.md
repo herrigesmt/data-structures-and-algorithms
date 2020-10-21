@@ -35,4 +35,4 @@ Establish empty string. Loop through 2 dimensional array. Then create a nested l
 
 ### [Code](./print-matrix.js)
 
-### [Tests](../../__tests__/test-print-matrix.js)
+### [Tests](../../_tests_/test-print-matrix.js)
