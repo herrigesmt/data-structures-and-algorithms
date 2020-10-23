@@ -14,4 +14,4 @@ We should loop through string 1, pushing all the letters into an object as a key
 
 ### [Code](./anagrams.js)
 
-### [Tests](../../../__tests__/test-anagram.js);
+### [Tests](../../../__tests__/test-anagram.js)
