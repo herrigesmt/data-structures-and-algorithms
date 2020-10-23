@@ -15,4 +15,4 @@ So this is a really long way of describing a binary tree. To solve this issue, w
 
 ### [Code](./sprinkler-system.js)
 
-### [Tests](../../__tests__/test-pring-matrix.js)
+### [Tests](../../__tests__/test-sprinkler-system.js)
